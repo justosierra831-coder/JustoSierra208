@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;list-style:none;text-decoration:none;}
+body{font-family:'Poppins',sans-serif;background:#1b1726;color:#fff;line-height:1.6;}
+img{max-width:100%;border-radius:10px;}
+.container{max-width:1200px;margin:auto;padding:20px;}
+
+/* 🔹 Navbar */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:20px;}
+.logo{font-size:24px;font-weight:800;color:#ff5a2c;}
+.nav-links{display:flex;gap:20px;}
+.nav-links li a{color:#fff;font-weight:600;transition:.3s;}
+.nav-links li a:hover{color:#ff5a2c;}
+.btn-menu{display:none;background:none;border:none;font-size:28px;color:#fff;cursor:pointer;}
+
+/* 🔹 Hero */
+.header{background:url('img/portada.jpeg')center/cover no-repeat;min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;}
+.hero-content h1{font-size:50px;margin-bottom:15px;}
+.hero-content h1{color: #BAB9B9;}
+.hero-content span{color:#ff5a2c;}
+.hero-content p{max-width:600px;margin:auto;margin-bottom:25px;}
+.buttons a{margin:10px;padding:12px 30px;border-radius:25px;font-weight:600;transition:.3s;}
+.btn-1{border:2px solid #ff5a2c;color:#fff;}
+.btn-1:hover{background:#ff5a2c;}
+.btn-2{background:#ff5a2c;color:#fff;}
+.btn-2:hover{background:#fff;color:#ff5a2c;}
+
+/* 🔹 Secciones */
+.section{padding:80px 20px;text-align:center;}
+.section.dark{background:#2a222a;}
+h2{font-size:32px;margin-bottom:20px;color:#ff5a2c;}
+p{color:#e3e3e3;}
+
+/* 🔹 Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:40px;}
+.card{background:#3f343f;padding:20px;border-radius:15px;transition:.3s;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.card:hover{transform:translateY(-10px);background:#352c35;}
+.card h3{margin:15px 0;color:#fff;}
+.card img{
+  height: 370px;
+  width: auto;
+}
+
+/* 🔹 Contacto */
+.contact-content{max-width:600px;margin:auto;}
+.contact-content form{display:flex;flex-direction:column;gap:15px;margin-top:20px;}
+input,textarea{padding:12px;border:none;border-radius:8px;background:#3f343f;color:#fff;resize:none;}
+textarea{min-height:120px;}
+.btn-3{padding:12px;border:none;background:#ff5a2c;color:#fff;border-radius:8px;cursor:pointer;font-weight:600;transition:.3s;}
+.btn-3:hover{background:#fff;color:#ff5a2c;}
+.social{margin-top:20px;display:flex;gap:20px;justify-content:center;}
+.social a{color:#fff;transition:.3s;}
+.social a:hover{color:#ff5a2c;}
+
+.contact {
+  padding: 50px 20px;
+  background: #3f343f;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ff5a2c;
+  outline: none;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  background: #ff0000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #0055cc;
+}
+
+.form-message {
+  margin-top: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: green;
+  display: none;
+}
+
+
+/* 🔹 Footer */
+.footer{text-align:center;padding:30px;background:#1b1726;color:#aaa;}
+
+/* 🔹 Responsive */
+@media(max-width:768px){
+  .nav-links{display:none;flex-direction:column;background:#2a222a;position:absolute;top:70px;right:0;width:200px;padding:20px;border-radius:10px;}
+  .nav-links.show{display:flex;}
+  .btn-menu{display:block;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔹 Navbar Glassmorphism */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: rgba(27, 23, 38, 0.6);
+  backdrop-filter: blur(12px);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  transition: 0.4s;
+}
+.navbar.scrolled {
+  background: rgba(27, 23, 38, 0.95);
+  padding: 10px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.logo { font-size: 24px; font-weight: 800; color: #ff5a2c; }
+.nav-links { display: flex; gap: 25px; }
+.nav-links li a {
+  color: #fff; font-weight: 600; position: relative; transition: .3s;
+}
+.nav-links li a::after {
+  content: ""; position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 2px; background: #ff5a2c;
+  transition: width .3s;
+}
+.nav-links li a:hover::after { width: 100%; }
+.menu-icon { display: none; font-size: 28px; cursor: pointer; color: #fff; }
+
+/* 🔹 Hero con Slider */
+.header {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; color: #fff; overflow: hidden;
+}
+.slider { position: absolute; top:0; left:0; width:100%; height:100%; z-index:-1; }
+.slides { display:none; }
+.slides img { width:100%; height:100vh; object-fit:cover; filter:brightness(0.6); }
+.hero-content { z-index:10; max-width:700px; }
+.hero-content h1 { font-size:48px; margin-bottom:15px; }
+.hero-content span { color:#ff5a2c; }
+.buttons a { margin:10px; padding:12px 30px; border-radius:25px; font-weight:600; }
+.btn-1 { border:2px solid #ff5a2c; color:#fff; }
+.btn-1:hover { background:#ff5a2c; }
+.btn-2 { background:#ff5a2c; color:#fff; }
+.btn-2:hover { background:#fff; color:#ff5a2c; }
+
+/* 🔹 Responsive */
+@media(max-width:768px){
+  .nav-links{ display:none; flex-direction:column; background:#2a222a;
+    position:absolute; top:65px; right:20px; width:220px; padding:20px; border-radius:12px; }
+  .nav-links.show{ display:flex; animation:fadeIn .4s ease; }
+  .menu-icon{ display:block; }
+}
+@keyframes fadeIn{ from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);} }
+
+
+.hidden{display: none;}
+.btn.mas{
+  cursor: pointer;padding:.5rem .9rem;
+  border-radius: 9999px;border: 0;
+  background:#ff7a3a;color:#fff;font-weight: 700;
+}

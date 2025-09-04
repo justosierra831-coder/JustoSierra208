@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escuela Justo Sierra Méndez 208</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Librería AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="script.js" defer></script>
+</head>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault(); // evita recargar
+  const form = e.target;
+  const data = new FormData(form);
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  const msg = document.getElementById("formMsg");
+  if (response.ok) {
+    msg.style.display = "block";
+    msg.textContent = "✅ ¡Tu mensaje fue enviado con éxito!";
+    msg.style.color = "green";
+    form.reset();
+  } else {
+    msg.style.display = "block";
+    msg.textContent = "❌ Ocurrió un error, intenta de nuevo.";
+    msg.style.color = "red";
+  }
+});
+</script>
+
+
+
+<body>
+  <!-- 🔹 Navbar -->
+  <div class="navbar">
+    <a href="#" class="logo">Justo Sierra Mendez 208</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="#Historia">Historia</a></li>
+        <li><a href="#Mision">Misión</a></li>
+        <li><a href="#Vision">Visión</a></li>
+        <li><a href="#Actividades">Actividades</a></li>
+        <li><a href="#Contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" id="menu-toggle">☰</div>
+  </div>
+
+  <!-- 🔹 Hero con Slider -->
+  <header class="header" id="Inicio">
+    <div class="slider">
+      <div class="slides fade">
+        <img src="img/1.jpg" alt="Escuela">
+      </div>
+      <div class="slides fade">
+        <img src="img/2.jpg" alt="Alumnos">
+      </div>
+      <div class="slides fade">
+        <img src="img/3.jpg" alt="Eventos">
+      </div>
+    </div>
+
+    <div class="hero-content" data-aos="zoom-in">
+      <h1>Bienvenidos a Justo Sierra Méndez 208</h1>
+      <p>Un lugar donde el aprendizaje y la excelencia se unen para formar un futuro brillante.</p>
+      <div class="buttons">
+        <a href="#Historia" class="btn-1">Conócenos</a>
+        <a href="#Contacto" class="btn-2">Contáctanos</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🔹 Historia -->
+  <section class="section container" id="Historia" data-aos="fade-up">
+    <h2>Nuestra Historia</h2>
+    <p>La Escuela Secundaria “Justo Sierra Méndez” abrió sus puertas el 17 de agosto de 2005 como Secundaria General con tres grupos. Inició bajo la dirección del Mtro. en Ciencias Agustín Torres Contreras y con un pequeño equipo docente fundador. Con el paso de los años, pasó de ser la “Escuela de Nueva Creación 208” a consolidarse como una institución reconocida en la región, que honra con su nombre al ilustre Justo Sierra Méndez.
+
+Hoy, tras más de 15 años de servicio y más de seis generaciones de egresados, la escuela cuenta con 24 grupos en ambos turnos, una plantilla de 38 docentes y 13 trabajadores de apoyo. Gracias a la innovación en su infraestructura y la calidad de su personal, se ha posicionado como una de las mejores instituciones educativas de la zona, formando jóvenes preparados para continuar sus estudios o enfrentar con éxito la vida cotidiana.</p>
+    <div class="cards">
+      <div class="card" data-aos="flip-left">
+        <img src="img/1.jpg" alt="">
+        <h3>Infraestructura</h3>
+        <p> Contamos con 
+          <ul>
+          <li>12 aulas</li>
+          <li>Dirección</li>
+          <li>Laboratorio de cómputo</li>
+          <li>3 laboratorio de ciencias I, II y III</li>
+          <li>Biblioteca con más de 1500 títulos</li>
+          <li>Taller de dibujo</li>
+          <li>Taller electrotecnia</li>
+          <li>Sanitarios.</li>
+          </ul>
+        </p>
+        <button class="btn-mas">Conoce mas</button>
+          <div class="extra-info hidden">
+            <P>Contamos con estructuras de 2 niveles </P>
+            <img src="img/I1.jpg" alt="">
+            <img src="img/I2.jpeg" alt="">
+            <p>Contamos con sanitarios para distinto turno</p>
+            <img src="img/I3.jpeg" alt="">
+            <p>Nuestras aulas para cada salon con camaras de seguridad dentro de las aulas</p>
+            <img src="img/i4.jpg" alt="">
+          </div>
+      </div>
+      <div class="card" data-aos="flip-up">
+        <img src="img/3.jpg" alt="">
+        <h3>Logros</h3>
+        <p>
+          <ul>
+          <li>Participación de la escuela en las Olimpiadas de Matemáticas, donde siempre se ha destacado.</li>
+          <li>Asistencia de la escuela los certámenes que convoca la autoridad.</li>
+          <li>Así mismo, en las Olimpiadas Deportivas, los alumnos de la institución han demostrado sus habilidades físicas para alcanzar la meta trazada.</li>
+          <li>Participación en desfiles convocados por el municipio.</li>
+          <li>1er lugar en la zona y 2o lugar nivel sector en el concurso de escoltas 2019-2020</li>
+          <li>1er lugar a nivel zona en el concurso de escoltas 2021-2022</li>
+          <li>Olimpiadas deportivas a nivel zona, en futbool 1er lugar femenil, atletismo 1o y 2o lugar 100 m, 3o lugar varonil 100 m. Relevos 4x100, 1er lugar</li>
+          <li>2o y 3er lugar a nivel zona en ajedrez ciclo escolar 2021-2022</li>
+        </ul>
+        </p>
+      </div>
+      <div class="card" data-aos="flip-right">
+        <img src="img/2.jpg" alt="">
+        <h3>Estudiantes</h3>
+        <p>
+          <ul>
+          <li>Formamos líderes responsables y preparados para el futuro.</li>
+          <li>Nuestra institución se enorgullece de contar con 510 alumnos matriculados, distribuidos en turnos de mañana y tarde, lo que permite brindar una atención cercana y personalizada.
+El compromiso y la excelencia de todos nuestros maestros garantizan una formación de calidad, reflejada en un 100% de egresados, quienes culminan exitosamente su preparación académica.</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Misión & Visión -->
+  <section class="section dark" id="Mision">
+    <div class="container mv">
+      <div data-aos="fade-right">
+        <h2>Misión</h2>
+        <p>Nuestro objetivo es brindar al estudiante una educación integral y de excelencia, que lo reconozca como el centro y razón de ser del proceso formativo. Buscamos dotarlo de conocimientos que le permitan integrarse al mundo global con responsabilidad, competitividad y un alto sentido nacionalista, ético y humanista.
+Este compromiso se fortalece con docentes preparados, profesionales y comprometidos, capaces de aprovechar las Tecnologías de la Información y la Comunicación (TIC) para transmitir sus saberes en sintonía con la sociedad del conocimiento. Todo ello acompañado del ejemplo, la práctica de valores universales y la formación de ciudadanos íntegros para el futuro.</p>
+      </div>
+      <div id="Vision" data-aos="fade-left">
+        <h2>Visión</h2>
+        <p>Somos una institución moderna, innovadora y transparente, que asegura al estudiante una educación de calidad, basada en la responsabilidad y en el compromiso con su desarrollo integral. Impulsamos la formación y actualización constante del docente, como pilar fundamental para fortalecer el aprendizaje y contribuir de manera significativa al progreso estatal y nacional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Actividades -->
+  <section class="section container" id="Actividades">
+    <h2 data-aos="zoom-in">Actividades Destacadas</h2>
+    <div class="contenedor">
+
+      <div class="card" data-aos="zoom-in-up" >
+        <img src="img/D1.jpeg" alt="">
+        <h3>Deportes</h3>
+        <p>Impulsamos el talento en fútbol, basquetbol, ajedrez, entre otras.</p>
+        <button class="btn-mas">Conoce mas</button>
+        <div class="extra-info hidden">
+          <P>Participamos en torneos locales y estatales de ajedrez</P>
+          <img src="img/D2.jpeg" alt="">
+          <p>Participamos en competencia de escoltas</p>
+          <img src="img/2.jpg" alt="">
+        </div>
+        </div>
+
+      <div class="card" data-aos="zoom-in-up" data-aos-delay="200">
+        <img src="img/A3.jpeg" alt="">
+        <h3>Cultura</h3>
+        <p>Contamos con concursos de danza , canto entre otras</p>
+        <button class="btn-mas">Conoce mas</button>
+        <div class="extra-info hidden">
+          <h3>Participamos en concurso de canto</h3>
+          <img src="img/A1.jpeg" alt="">
+          <h3>Participamos en un concurso de baile</h3>
+          <img src="img/A2.jpeg" alt="">
+          <img src="img/A3.jpeg" alt="">
+        </div>
+      </div>
+
+      <div class="card" data-aos="zoom-in-up" data-aos-delay="400">
+        <img src="img/C5.jpeg" alt="">
+        <h3>Ciencias</h3>
+        <p>Hemos echo varios proyectos incluyendo las sustancias ilicitas, la reforestacion entre muchas otras</p>
+          <button class="btn-mas">Conoce mas</button>
+        <div class="extra-info hidden">
+          <h3>Participacion en exposicion "Di no a las drogas" </h3>
+          <img src="img/C1.jpeg" alt="">
+          <img src="img/C2.jpeg" alt="">
+          <img src="img/C3.jpeg" alt="">
+          <h3>Reforestacion con disciplina de biologia </h3>
+          <img src="img/C7.jpeg" alt="">
+          <img src="img/C6.jpeg" alt="">
+        </div>
+     
+      </div>
+
+  
+      <div class="card" data-aos="zoom-in-up" data-aos-delay="400">
+        <h2>Avisos importantes</h2> <div class="cards"></div>
+        <h1>Novedades</h1>
+  <div class="Avisos-container">
+    <div class="aviso">
+         <h3>Junta de padres</h3>
+         <p>El proximo 12 de septiembre a las ...</p>      
+    </div>
+    <div class="aviso">
+      <h3>Feria escolar</h3>
+      <p>No faltes a nuestra feria entre alumnos el dia ...</p>
+    </div>
+    <div class="aviso">
+      <h3>Entrega de calificaciones</h3>
+      <p>La entrega sera el dia... </p>
+       <button class="btn-mas">Conoce mas</button>
+        <div class="extra-info hidden">
+          <p>Participamos en concurso de canto</p>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+    </div>
+  </section>
+
+  
+
+
+
+
+  <!-- 🔹 C -->
+<section class="contact" id="Contacto">
+  <h2>📩 Ponte en contacto con nosotros</h2>
+  <form action="https://getform.io/f/agdjjmlb" method="POST" class="contact-form">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo</label>
+      <input type="email" id="email" name="_replyto" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+
+    <button type="submit">Enviar</button>
+    <p id="formMsg" class="form-message"></p>
+
+  </form>
+
+</section>
+
+
+
+  <!-- 🔹 Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Escuela Justo Sierra Méndez 208-JJGS</p>
+  </footer>
+
+  <!-- Inicializar AOS -->
+  <script>
+    AOS.init({ duration: 1200, once: true });
+  </script>
+
+  <script>
+    document.addEventListener('click', (e)=> {
+      if (e.target.matches(".btn-mas")){
+        const card = e.target.closest(".card");
+        const extra = card.querySelector(".extra-info");
+        extra.classList.toggle("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>
